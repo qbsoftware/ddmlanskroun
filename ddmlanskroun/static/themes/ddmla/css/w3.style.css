@@ -1,0 +1,50 @@
+.bgimg {
+    background-image: url("/images/background.jpg");
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Top menu. */
+.w3-bar-item {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#brand {
+  display: block !important;
+  padding: 0 !important;
+}
+
+/* Link without underline an hover. */
+.akce a:link, .clanek a:link, .ddm-logo a:link,
+.akce a:visited, .clanek a:visited, .ddm-logo a:visited,
+.akce a:hover, .clanek a:hover, .ddm-logo a:hover,
+.akce a:active, .clanek a:active, .ddm-logo a:active {
+    text-decoration: none;
+}
+
+
+/* Google map. */
+.map-container {
+	width: 100%;
+}
+.map-container iframe{
+	width: 100%;
+	display: block;
+	pointer-events: none;
+	position: relative; /* IE needs a position other than static */
+}
+.map-container iframe.clicked{
+	pointer-events: auto;
+}
+
+
+/* Body width. */
+@media (min-width:993px){
+    .w3-content {
+        max-width:80%;
+        /*max-width:980px;*/
+    }
+}

@@ -2,7 +2,8 @@ version: '3.4'
 services:
 
   leprikon:
-    image: leprikon/leprikon
+    image: misli/ddmlanskroun
+    build: .
     depends_on:
       - memcached
       - mysql
@@ -46,7 +47,7 @@ services:
   smtp:
     image: catatnight/postfix
     environment:
-      maildomain: ddmlanskroun.leprikon.cz
+      maildomain: ddm-lanskroun.cz
       smtp_user: ddmlanskroun:emailpassword
     stdin_open: true
     volumes:

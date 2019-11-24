@@ -1,1 +1,1 @@
-letsencrypt certonly --webroot -w /srv/letsencrypt/htdocs -d ddmlanskroun.leprikon.cz
+letsencrypt certonly --webroot -w /srv/letsencrypt/htdocs -d ddm-lanskroun.cz www.ddm-lanskroun.cz

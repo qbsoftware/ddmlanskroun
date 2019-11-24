@@ -1,0 +1,220 @@
+{% load i18n cms_tags menu_tags leprikon_tags rocketchat sekizai_tags staticfiles ganalytics %}
+<!DOCTYPE html>
+<html lang="cs-CZ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/images/favicon.ico">
+    <title>{% block title %}{% endblock %} &mdash; Dům dětí a mládeže DAMIÁN, Lanškroun</title>
+
+    <link rel="stylesheet" type="text/css" media="all" href="{% static 'leprikon/lib/bootstrap/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="{% static 'leprikon/css/layout.css' %}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/style.css' %}" />
+    {% render_block "css" %}
+    <script src="{% static 'leprikon/lib/jquery.min.js' %}"></script>
+    <link rel="shortcut icon" href="{% static 'leprikon/img/favicon.ico' %}" />
+
+    {% if backends %}
+    <!-- Bootstrap social -->
+    <link rel="stylesheet" type="text/css" media="all" href="{% static 'leprikon/lib/font-awesome/css/font-awesome.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="{% static 'leprikon/lib/bootstrap-social.min.css' %}"/>
+    {% endif %}
+
+    <script type="text/javascript">
+        window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ddm-lanskroun.cz\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.12"}};
+        !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+img.wp-smiley,
+img.emoji {
+    display: inline !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 1em !important;
+    width: 1em !important;
+    margin: 0 .07em !important;
+    vertical-align: -0.1em !important;
+    background: none !important;
+    padding: 0 !important;
+}
+    </style>
+    <link rel='stylesheet' id='w3_css-css'  href='https://www.w3schools.com/w3css/4/w3.css?ver=4.9.12' type='text/css' media='all' />
+    <link rel='stylesheet' id='w3_style_css-css'  href='/static/themes/ddmla/css/w3.style.css?ver=4.9.12' type='text/css' media='all' />
+    <link rel='stylesheet' id='style-css'  href='/static/themes/ddmla/style.css?ver=4.9.12' type='text/css' media='all' />
+    <!--script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script-->
+    <script type='text/javascript' src='/static/themes/ddmla/js/holder.min.js?ver=4.9.12'></script>
+    <script type='text/javascript' src='/static/themes/ddmla/js/jquery.matchHeight.js?ver=4.9.12'></script>
+    <meta name="generator" content="Leprikón {{ request.leprikon_version }}" />
+    
+    <!-- BEGIN ExactMetrics v5.3.9 Universal Analytics - https://exactmetrics.com/ -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-106661104-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- END ExactMetrics Universal Analytics -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+    .bgimg {
+        background-image: url('/static/themes/ddmla/images/background.png');
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+    </style>
+</head>
+
+<body class="page-template-default page bgimg {{ request.current_page.slug }}" onload="onLoad()">
+    {% cms_toolbar %}
+    <header class="w3-top">
+        <div class="w3-light-grey w3-border w3-padding-large" style="height: 140px">
+            <div class="ddm-logo w3-display-container w3-left" style="height: 100%; width: 330px;">
+                <a class="w3-display-left" href="/">
+                    <img id="brand" src="/static/themes/ddmla/images/damian-logo-black.png" alt="DDM Damián Lanškroun" height="100px">
+                </a>
+                <a class="w3-display-right" href="/">
+                    <div class="w3-text-black">
+                    <b>Dům dětí a mládeže<br/>DAMIÁN, Lanškroun</b>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Right menu. -->
+            <div class="w3-content w3-right w3-mobile">
+                <div class="w3-row-padding">
+                    <a href="/krouzky" class="w3-button w3-large w3-hide-small w3-hide-medium">Kroužky</a>
+                    <a href="/akce" class="w3-button w3-large w3-hide-small w3-hide-medium">Akce</a>
+                    <a href="/gdpr" class="w3-button w3-large w3-hide-small w3-hide-medium">GDPR</a>
+                    <a href="/tabory" class="w3-button w3-large w3-hide-small w3-hide-medium">Tábory</a>
+                    <a href="/fotogalerie" class="w3-button w3-large w3-hide-small w3-hide-medium">Fotogalerie</a>
+                    <a href="/projekty" class="w3-button w3-large w3-hide-small w3-hide-medium">Projekty</a>
+                    <a class="w3-button w3-hover-opacity w3-hide-small w3-hide-medium" href="https://www.facebook.com/D%C5%AFm-d%C4%9Bt%C3%AD-a-ml%C3%A1de%C5%BEe-Dami%C3%A1n-Lan%C5%A1kroun-1426845087354892/"><img src="/static/themes/ddmla/images/facebook.png" alt="facebook"></a>
+
+                    <a href="javascript:void(0)" class="w3-button w3-right w3-hide-large" onclick="collapseMenu()">&#9776;</a>
+                </div>
+                <div class="w3-row-padding w3-right w3-hide-small w3-hide-medium w3-margin-right">
+                    <a href="/uredni-deska" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">Úřední deska</a>
+                    <a href="/o-nas" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">O nás</a>
+                    <a href="/kariera" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">Kariéra</a>
+                    <a href="/evropska-dobrovolna-sluzba" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">Evropská Dobrovolná Služba</a>
+                    <a class="w3-button w3-large w3-round-xlarge w3-border-pale-blue w3-border w3-padding" href="https://www.facebook.com/OK-klub-148299321922433/?fref=ts">O. K.  klub</a>
+                </div>
+            </div>
+        </div>
+        <div id="collapsedMenu" class="w3-bar-block w3-light-grey w3-border w3-hide w3-hide-large">
+            <a href="/krouzky" class="w3-bar-item w3-button">Kroužky</a>
+            <a href="/akce" class="w3-bar-item w3-button">Akce</a>
+            <a href="/gdpr" class="w3-bar-item w3-button">GDPR</a>
+            <a href="/tabory" class="w3-bar-item w3-button">Tábory</a>
+            <a href="/fotogalerie" class="w3-bar-item w3-button">Fotogalerie</a>
+            <a href="/projekty" class="w3-bar-item w3-button">Projekty</a>
+            <a href="/uredni-deska" class="w3-bar-item w3-button">Úřední deska</a>
+            <a href="/o-nas" class="w3-bar-item w3-button">O nás</a>
+            <a href="/kariera" class="w3-bar-item w3-button">Kariéra</a>
+            <a href="/evropska-dobrovolna-sluzba" class="w3-bar-item w3-button">Evropská Dobrovolná Služba</a>
+            <a class="w3-hover-opacity w3-padding w3-margin" href="https://www.facebook.com/D%C5%AFm-d%C4%9Bt%C3%AD-a-ml%C3%A1de%C5%BEe-Dami%C3%A1n-Lan%C5%A1kroun-1426845087354892/"><img src="/static/themes/ddmla/images/facebook.png" alt="facebook"></a>
+            <a class="w3-button w3-large w3-round-xlarge w3-border-pale-blue w3-border w3-padding w3-margin" href="https://www.facebook.com/OK-klub-148299321922433/?fref=ts">O. K.  klub</a>
+        </div>
+    </header>
+
+    <div class="w3-content" style="padding-top: 150px"></div>
+
+    {% if messages %}
+    <div class="modal fade" id="messages" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    {% for message in messages %}
+                    <div class="alert alert-{% if message.level_tag == 'error' %}danger{% else %}{{ message.level_tag }}{% endif %}" role="alert">
+                        <span class="glyphicon glyphicon-{% if message.level_tag == 'error' %}exclamation{% else %}{{ message.level_tag }}{% endif %}-sign" aria-hidden="true"></span>
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">{% trans 'OK' %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('#messages').modal({
+            backdrop: 'static',
+        });
+    </script>
+    {% endif %}
+    {% block base_content %}{% endblock %}
+
+    <!-- FOOTER -->
+    <footer class="w3-container w3-light-grey" style="margin-top: 50px">
+        <div class="w3-content w3-row-padding">
+            <div class="w3-third">
+                {% block footer %}
+                {% static_placeholder "footer" %}
+                {% endblock %}
+            </div>
+            <div class="w3-twothird">
+                <h2>Kde nás najdete</h2>
+                <p class="map-container">
+                    <!--iframe width="450" height="550" frameborder="0" style="border:0" allowfullscreen
+                        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJHc7_1hX2DUcRqXHZO3VlpAs&key=AIzaSyCZiGZAe2QNEWhJZRm5eaY7etFMQnzcNc4">
+                    </iframe-->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1284.586652056693!2d16.60783292760811!3d49.91432206446016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470df6167943ecf5%3A0xbbe24018b1b362bf!2zRMWvbSBkxJt0w60gYSBtbMOhZGXFvmUgTGFuxaFrcm91bg!5e0!3m2!1scs!2scz!4v1511278905768" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </p>
+            </div>
+        </div>
+        <!-- .w3-row-padding -->
+    </footer>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--script>
+        window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+    </script-->
+    <script>
+        function onLoad() {
+            //var opt = { byRow: false };
+            var opt = {};
+            $('.akce').matchHeight(opt);
+            $('.clanek').matchHeight(opt);
+
+            // Google map.
+            $('.map-container')
+                .click(function () {
+                    $(this).find('iframe').addClass('clicked')
+                })
+                .mouseleave(function () {
+                    $(this).find('iframe').removeClass('clicked')
+                });
+        }
+                                                      
+        function collapseMenu() {
+            var x = document.getElementById("collapsedMenu");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+    <script type='text/javascript' src='/static/js/wp-embed.min.js?ver=4.9.12'></script>
+    <script type="text/javascript" src="{% static 'leprikon/lib/bootstrap/js/bootstrap.min.js' %}"></script>
+    {% render_block "js" %}
+</body>
+
+</html>

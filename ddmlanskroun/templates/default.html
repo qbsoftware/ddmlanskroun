@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock %}
+{% block meta_description %}{% page_attribute "meta_description" %}{% endblock %}
+
+{% block base_content %}
+<div class="w3-content w3-round w3-white w3-padding-large w3-border" style="min-height: 440px; padding-top: 150px">
+    {% block content %}
+
+    <h1 class="title">{% block h1 %}{% page_attribute "title" %}{% endblock %}</h1>
+
+    <div class="page_content">{% block page_content %}{% placeholder "content" %}{% endblock %}</div>
+
+    {% endblock %}
+</div>
+{% endblock %}
