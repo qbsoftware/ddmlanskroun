@@ -106,7 +106,16 @@ img.emoji {
                     </span>
                     <a href="https://ddm-lanskroun.cz/kalendar" class="w3-button w3-large w3-hide-small w3-hide-medium">Kalendář</a>
                     <a href="https://ddm-lanskroun.cz/gdpr" class="w3-button w3-large w3-hide-small w3-hide-medium">GDPR</a>
-                    <a href="/tabory/" class="w3-button w3-large w3-hide-small w3-hide-medium">Tábory</a>
+                    <span class="dropdown">
+                        <a class="w3-button w3-large w3-hide-small w3-hide-medium dropdown-toggle"
+                                id="dropdownTabory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Tábory <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownTabory">
+                            <li><a href="/primestske-tabory/">Příměstské tábory</a></li>
+                            <li><a href="/pobytove-tabory/">Pobytové tábory</a></li>
+                        </ul>
+                    </span>
                     <a href="https://ddm-lanskroun.cz/fotogalerie" class="w3-button w3-large w3-hide-small w3-hide-medium">Fotogalerie</a>
                     <a href="https://ddm-lanskroun.cz/projekty" class="w3-button w3-large w3-hide-small w3-hide-medium">Projekty</a>
                     <a class="w3-button w3-hover-opacity w3-hide-small w3-hide-medium" href="https://www.facebook.com/D%C5%AFm-d%C4%9Bt%C3%AD-a-ml%C3%A1de%C5%BEe-Dami%C3%A1n-Lan%C5%A1kroun-1426845087354892/"><img src="/static/themes/ddmla/images/facebook.png" alt="facebook"></a>
@@ -127,17 +136,26 @@ img.emoji {
             <a href="https://ddm-lanskroun.cz/krouzky" class="w3-bar-item w3-button">Kroužky</a>
             <span class="dropdown">
                 <a class="w3-bar-item w3-button dropdown-toggle"
-                        id="dropdownAkce" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        id="dropdownAkceCollapsed" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Akce <span class="caret"></span>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownAkce">
+                <ul class="dropdown-menu" aria-labelledby="dropdownAkceCollapsed">
                     <li><a href="/akce/">Lanškroun</a></li>
                     <li><a href="/akce-rudoltice/">Rudoltice</a></li>
                 </ul>
             </span>
             <a href="https://ddm-lanskroun.cz/kalendar" class="w3-bar-item w3-button">Kalendář</a>
             <a href="https://ddm-lanskroun.cz/gdpr" class="w3-bar-item w3-button">GDPR</a>
-            <a href="https://ddm-lanskroun.cz/tabory" class="w3-bar-item w3-button">Tábory</a>
+            <span class="dropdown">
+                <a class="w3-bar-item w3-button dropdown-toggle"
+                        id="dropdownTaboryCollapsed" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Tábory <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownTaboryCollapsed">
+                    <li><a href="/pobytove-tabory/">Příměstské tábory</a></li>
+                    <li><a href="/primestske-tabory/">Pobytové tábory</a></li>
+                </ul>
+            </span>
             <a href="https://ddm-lanskroun.cz/fotogalerie" class="w3-bar-item w3-button">Fotogalerie</a>
             <a href="https://ddm-lanskroun.cz/projekty" class="w3-bar-item w3-button">Projekty</a>
             <a href="https://ddm-lanskroun.cz/uredni-deska" class="w3-bar-item w3-button">Úřední deska</a>
