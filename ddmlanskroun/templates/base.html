@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" type="text/css" media="all" href="{% static 'leprikon/lib/bootstrap/css/bootstrap.min.css' %}"/>
     <link rel="stylesheet" type="text/css" media="all" href="{% static 'leprikon/css/layout.css' %}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="{% static 'leprikon/css/chat.css' %}"/>
     <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/style.css' %}" />
     {% render_block "css" %}
     <script src="{% static 'leprikon/lib/jquery.min.js' %}"></script>
@@ -47,7 +48,6 @@ img.emoji {
     <link rel='stylesheet' id='w3_css-css'  href='https://www.w3schools.com/w3css/4/w3.css?ver=4.9.12' type='text/css' media='all' />
     <link rel='stylesheet' id='w3_style_css-css'  href='/static/themes/ddmla/css/w3.style.css?ver=4.9.12' type='text/css' media='all' />
     <link rel='stylesheet' id='style-css'  href='/static/themes/ddmla/style.css?ver=4.9.12' type='text/css' media='all' />
-    <!--script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script-->
     <script type='text/javascript' src='/static/themes/ddmla/js/holder.min.js?ver=4.9.12'></script>
     <script type='text/javascript' src='/static/themes/ddmla/js/jquery.matchHeight.js?ver=4.9.12'></script>
     <meta name="generator" content="Leprikón {{ request.leprikon_version }}" />
@@ -255,6 +255,7 @@ img.emoji {
     <script type='text/javascript' src='/static/js/wp-embed.min.js?ver=4.9.12'></script>
     <script type="text/javascript" src="{% static 'leprikon/lib/bootstrap/js/bootstrap.min.js' %}"></script>
     {% render_block "js" %}
+    {% livechat %}
 </body>
 
 </html>
