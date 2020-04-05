@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.ico">
+    <title><?php bloginfo('name') ?></title>
+
+	<link rel="stylesheet" type="text/css" media="all" href="https://ddmlanskroun.leprikon.cz/static/leprikon/lib/bootstrap/css/bootstrap.min.css"/>
+    <?php wp_head(); ?>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+    .bgimg {
+        background-image: url('<?php echo get_bloginfo('template_url') ?>/images/background.png');
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+    </style>
+</head>
+
+<body <?php body_class('bgimg'); ?> onload="onLoad()">
+    <header class="w3-top">
+        <div class="w3-light-grey w3-border w3-padding-large" style="height: 140px">
+            <div class="ddm-logo w3-display-container w3-left" style="height: 100%; width: 330px;">
+                <a class="w3-display-left" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <img id="brand" src="<?php echo get_bloginfo('template_url') ?>/images/damian-logo-black.png" alt="DDM Damián Lanškroun" height="100px">
+                </a>
+                <a class="w3-display-right" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <div class="w3-text-black">
+                    <b>Dům dětí a mládeže<br/>DAMIÁN, Lanškroun</b>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Right menu. -->
+            <div class="w3-content w3-right w3-mobile">
+                <div class="w3-row-padding">
+                    <a href="<?php echo esc_url(home_url('/krouzky')); ?>" class="w3-button w3-large w3-hide-small w3-hide-medium">Kroužky</a>
+                    <span class="dropdown">
+                        <a class="w3-button w3-large w3-hide-small w3-hide-medium dropdown-toggle"
+                                id="dropdownAkce" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Akce <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownAkce">
+                            <li><a href="https://ddmlanskroun.leprikon.cz/akce/">Lanškroun</a></li>
+                            <li><a href="https://ddmlanskroun.leprikon.cz/akce-rudoltice/">Rudoltice</a></li>
+                        </ul>
+                    </span>
+                    <a href="<?php echo esc_url(home_url('/kalendar')); ?>" class="w3-button w3-large w3-hide-small w3-hide-medium">Kalendář</a>
+                    <a href="<?php echo esc_url(home_url('/gdpr')); ?>" class="w3-button w3-large w3-hide-small w3-hide-medium">GDPR</a>
+                    <span class="dropdown">
+                        <a class="w3-button w3-large w3-hide-small w3-hide-medium dropdown-toggle"
+                                id="dropdownTabory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Tábory <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownTabory">
+                            <li><a href="https://ddmlanskroun.leprikon.cz/primestske-tabory/">Příměstské tábory</a></li>
+                            <li><a href="https://ddmlanskroun.leprikon.cz/pobytove-tabory/">Pobytové tábory</a></li>
+                        </ul>
+                    </span>
+                    <a href="<?php echo esc_url(home_url('/fotogalerie')); ?>" class="w3-button w3-large w3-hide-small w3-hide-medium">Fotogalerie</a>
+                    <a href="<?php echo esc_url(home_url('/projekty')); ?>" class="w3-button w3-large w3-hide-small w3-hide-medium">Projekty</a>
+                    <a class="w3-button w3-hover-opacity w3-hide-small w3-hide-medium" href="https://www.facebook.com/D%C5%AFm-d%C4%9Bt%C3%AD-a-ml%C3%A1de%C5%BEe-Dami%C3%A1n-Lan%C5%A1kroun-1426845087354892/"><img src="<?php echo get_bloginfo('template_url') ?>/images/facebook.png" alt="facebook"></a>
+
+                    <a href="javascript:void(0)" class="w3-button w3-right w3-hide-large" onclick="collapseMenu()">&#9776;</a>
+                </div>
+                <div class="w3-row-padding w3-right w3-hide-small w3-hide-medium w3-margin-right">
+                    <a href="<?php echo esc_url(home_url('/uredni-deska')); ?>" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">Úřední deska</a>
+                    <a href="<?php echo esc_url(home_url('/o-nas')); ?>" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">O nás</a>
+                    <a href="<?php echo esc_url(home_url('/kariera')); ?>" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">Kariéra</a>
+                    <!--a href="<?php echo esc_url(home_url('/evropska-dobrovolna-sluzba')); ?>" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">Evropská Dobrovolná Služba</a-->
+                    <a href="<?php echo esc_url(home_url('/damian-online')); ?>" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">Damián online</a>
+                    <a class="w3-button w3-large w3-round-xlarge w3-border-pale-blue w3-border w3-padding" href="https://www.facebook.com/OK-klub-148299321922433/?fref=ts">O. K.  klub</a>
+                    <a href="https://ddmlanskroun.leprikon.cz/muj-ucet/" class="w3-button w3-large w3-hide-small w3-hide-medium">Můj účet</a>
+                </div>
+            </div>
+        </div>
+        <div id="collapsedMenu" class="w3-bar-block w3-light-grey w3-border w3-hide w3-hide-large">
+			<a href="<?php echo esc_url(home_url('/krouzky')); ?>" class="w3-bar-item w3-button">Kroužky</a>
+            <span class="dropdown">
+                <a class="w3-bar-item w3-button dropdown-toggle"
+                        id="dropdownAkceCollapsed" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Akce <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownAkceCollapsed">
+                    <li><a href="https://ddmlanskroun.leprikon.cz/akce/">Lanškroun</a></li>
+                    <li><a href="https://ddmlanskroun.leprikon.cz/akce-rudoltice/">Rudoltice</a></li>
+                </ul>
+            </span>
+            <a href="<?php echo esc_url(home_url('/kalendar')); ?>" class="w3-bar-item w3-button">Kalendář</a>
+            <a href="<?php echo esc_url(home_url('/gdpr')); ?>" class="w3-bar-item w3-button">GDPR</a>
+            <span class="dropdown">
+                <a class="w3-bar-item w3-button dropdown-toggle"
+                        id="dropdownTaboryCollapsed" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Tábory <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownTaboryCollapsed">
+                    <li><a href="https://ddmlanskroun.leprikon.cz/pobytove-tabory/">Příměstské tábory</a></li>
+                    <li><a href="https://ddmlanskroun.leprikon.cz/primestske-tabory/">Pobytové tábory</a></li>
+                </ul>
+            </span>
+            <a href="<?php echo esc_url(home_url('/fotogalerie')); ?>" class="w3-bar-item w3-button">Fotogalerie</a>
+            <a href="<?php echo esc_url(home_url('/projekty')); ?>" class="w3-bar-item w3-button">Projekty</a>
+            <a href="<?php echo esc_url(home_url('/uredni-deska')); ?>" class="w3-bar-item w3-button">Úřední deska</a>
+            <a href="<?php echo esc_url(home_url('/o-nas')); ?>" class="w3-bar-item w3-button">O nás</a>
+            <a href="<?php echo esc_url(home_url('/kariera')); ?>" class="w3-bar-item w3-button">Kariéra</a>
+            <!--a href="<?php echo esc_url(home_url('/evropska-dobrovolna-sluzba')); ?>" class="w3-bar-item w3-button">Evropská Dobrovolná Služba</a-->
+            <a href="<?php echo esc_url(home_url('/damian-online')); ?>" class="w3-bar-item w3-button">Damián online</a>
+            <a class="w3-hover-opacity w3-padding w3-margin" href="https://www.facebook.com/D%C5%AFm-d%C4%9Bt%C3%AD-a-ml%C3%A1de%C5%BEe-Dami%C3%A1n-Lan%C5%A1kroun-1426845087354892/"><img src="<?php echo get_bloginfo('template_url') ?>/images/facebook.png" alt="facebook"></a>
+            <a class="w3-button w3-large w3-round-xlarge w3-border-pale-blue w3-border w3-padding w3-margin" href="https://www.facebook.com/OK-klub-148299321922433/?fref=ts">O. K.  klub</a>
+            <a href="https://ddmlanskroun.leprikon.cz/muj-ucet/" class="w3-bar-item w3-button">Můj účet</a>
+        </div>
+    </header>
+
+    <!-- Akce v nasledujicim obdobi.
+        ====================================================================================== -->
+    <div class="w3-content" style="padding-top: 150px">
+    </div>
+
