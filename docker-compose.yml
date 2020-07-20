@@ -27,7 +27,7 @@ services:
       ROCKETCHAT_API_URL: http://chat:3000/_chat
       SECRET_KEY: secretkey
       SENTRY_ENVIRONMENT: 'ddmlanskroun'
-      SERVER_EMAIL: '"DDM Lanškroun" <leprikon@ddmlanskroun.leprikon.cz>'
+      SERVER_EMAIL: '"DDM Lanškroun" <ddmlanskroun@leprikon.cz>'
     ports:
       - 127.0.0.1:10090:80
     volumes:
@@ -102,7 +102,7 @@ services:
   smtp:
     image: catatnight/postfix
     environment:
-      maildomain: ddm-lanskroun.cz
+      maildomain: leprikon.cz
       smtp_user: ddmlanskroun:emailpassword
     stdin_open: true
     tty: true
