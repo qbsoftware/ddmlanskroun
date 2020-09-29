@@ -1,0 +1,84 @@
+    <!-- FOOTER -->
+    <footer class="w3-container w3-light-grey" style="margin-top: 50px">
+        <div class="w3-content w3-row-padding">
+            <div class="w3-third">
+                <div>
+                    <h2 class="widget-title">Adresa</h2>
+                    <div class="textwidget">
+                        <h4>Dům dětí a mládeže DAMIÁN, Lanškroun</h4>
+                        <p>IČO: 72079878</p>
+                        <p>Vančurova 46<br>Lanškroun<br>563 01</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="widget-title">Kontakt</h3>
+                    <div class="textwidget">
+                        <p>
+                            <b>Telefon:</b></br>+420 465 322 515</br>+420 605 332 981
+                            </br><b>E-mail:</b>
+                            </br>ředitelka: reditel@ddm-lanskroun.cz
+                            </br>ekonomka: ekonom@ddm-lanskroun.cz
+                            </br>pedagog volného času: pedagog@ddm-lanskroun.cz
+                            </br>marcela@ddm-lanskroun.cz
+                            </br>
+                            <b>Bankovní účet:</b> 43-8504130227/0100
+                            </br>(do poznámky uveďte účel platby a jméno dítěte!!!)
+                            </br></br></br>
+                            © 2020 DDM Lanškroun
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-twothird">
+                <h2>Kde nás najdete</h2>
+                <p class="map-container">
+                    <!--iframe width="450" height="550" frameborder="0" style="border:0" allowfullscreen
+                        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJHc7_1hX2DUcRqXHZO3VlpAs&key=AIzaSyCZiGZAe2QNEWhJZRm5eaY7etFMQnzcNc4">
+                    </iframe-->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1284.586652056693!2d16.60783292760811!3d49.91432206446016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470df6167943ecf5%3A0xbbe24018b1b362bf!2zRMWvbSBkxJt0w60gYSBtbMOhZGXFvmUgTGFuxaFrcm91bg!5e0!3m2!1scs!2scz!4v1511278905768" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </p>
+            </div>
+        </div>
+        <!-- .w3-row-padding -->
+    </footer>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--script>
+        window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+    </script-->
+    <script>
+        function onLoad() {
+            //var opt = { byRow: false };
+            var opt = {};
+            $('.akce').matchHeight(opt);
+            $('.clanek').matchHeight(opt);
+
+            // Google map.
+            $('.map-container')
+                .click(function () {
+                    $(this).find('iframe').addClass('clicked')
+                })
+                .mouseleave(function () {
+                    $(this).find('iframe').removeClass('clicked')
+                });
+        }
+                                                      
+        function collapseMenu() {
+            var x = document.getElementById("collapsedMenu");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+    <?php wp_footer(); ?>
+    <script type="text/javascript" src="https://ddmlanskroun.leprikon.cz/static/leprikon/lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

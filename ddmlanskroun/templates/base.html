@@ -10,7 +10,9 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/static/images/favicon.ico">
+    <!--
+    <link rel="icon" href="images/favicon.ico">
+    -->
     <title>{% block title %}{% endblock %} &mdash; Dům dětí a mládeže DAMIÁN, Lanškroun</title>
 
     <link rel="stylesheet" type="text/css" media="all" href="{% static 'leprikon/lib/bootstrap/css/bootstrap.min.css' %}"/>
@@ -18,6 +20,96 @@
     <link rel="stylesheet" type="text/css" media="all" href="{% static 'leprikon/css/chat.css' %}"/>
     <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/style.css' %}" />
     {% render_block "css" %}
+    <link rel='dns-prefetch' href='//ajax.googleapis.com' />
+    <link rel='dns-prefetch' href='//www.w3schools.com' />
+    <link rel='dns-prefetch' href='//s.w.org' />
+<!-- This site uses the Google Analytics by ExactMetrics plugin v6.2.2 - Using Analytics tracking - https://www.exactmetrics.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var em_version         = '6.2.2';
+	var em_track_user      = true;
+	var em_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-106661104-1';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+
+	if ( 'undefined' === typeof gaOptout ) {
+		function gaOptout() {
+			__gaTrackerOptout();
+		}
+	}
+	
+	if ( em_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+window.ga = __gaTracker;		__gaTracker('create', 'UA-106661104-1', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('send','pageview');
+		__gaTracker( function() { window.ga = __gaTracker; } );
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + em_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+			window.ga = __gaTracker;		})();
+		}
+</script>
+<!-- / Google Analytics by ExactMetrics -->
+
     <script src="{% static 'leprikon/lib/jquery.min.js' %}"></script>
     <link rel="shortcut icon" href="{% static 'leprikon/img/favicon.ico' %}" />
 
@@ -28,7 +120,7 @@
     {% endif %}
 
     <script type="text/javascript">
-        window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ddm-lanskroun.cz\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.12"}};
+        window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ddm-lanskroun.cz\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.15"}};
         !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
     </script>
     <style type="text/css">
@@ -45,29 +137,25 @@ img.emoji {
     padding: 0 !important;
 }
     </style>
-    <link rel='stylesheet' id='w3_css-css'  href='https://www.w3schools.com/w3css/4/w3.css?ver=4.9.12' type='text/css' media='all' />
-    <link rel='stylesheet' id='w3_style_css-css'  href='/static/themes/ddmla/css/w3.style.css?ver=4.9.12' type='text/css' media='all' />
-    <link rel='stylesheet' id='style-css'  href='/static/themes/ddmla/style.css?ver=4.9.12' type='text/css' media='all' />
-    <script type='text/javascript' src='/static/themes/ddmla/js/holder.min.js?ver=4.9.12'></script>
-    <script type='text/javascript' src='/static/themes/ddmla/js/jquery.matchHeight.js?ver=4.9.12'></script>
-    <meta name="generator" content="Leprikón {{ request.leprikon_version }}" />
-    
-    <!-- BEGIN ExactMetrics v5.3.9 Universal Analytics - https://exactmetrics.com/ -->
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-106661104-1', 'auto');
-      ga('send', 'pageview');
+    <link rel='stylesheet' id='w3_css-css'  href='https://www.w3schools.com/w3css/4/w3.css?ver=4.9.15' type='text/css' media='all' />
+    <link rel='stylesheet' id='w3_style_css-css'  href='https://ddm-lanskroun.cz/wp-content/themes/ddmla/css/w3.style.css?ver=4.9.15' type='text/css' media='all' />
+    <link rel='stylesheet' id='style-css'  href='https://ddm-lanskroun.cz/wp-content/themes/ddmla/style.css?ver=4.9.15' type='text/css' media='all' />
+    <script type='text/javascript'>
+    /* <![CDATA[ */
+    var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"zip,mp3,mpeg,pdf,docx,pptx,xlsx,rar","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/ddm-lanskroun.cz","hash_tracking":"false"};
+    /* ]]> */
     </script>
-    <!-- END ExactMetrics Universal Analytics -->
+    <script type='text/javascript' src='https://ddm-lanskroun.cz/wp-content/plugins/google-analytics-dashboard-for-wp/assets/js/frontend.min.js?ver=6.2.2'></script>
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+    <script type='text/javascript' src='https://ddm-lanskroun.cz/wp-content/themes/ddmla/js/holder.min.js?ver=4.9.15'></script>
+    <script type='text/javascript' src='https://ddm-lanskroun.cz/wp-content/themes/ddmla/js/jquery.matchHeight.js?ver=4.9.15'></script>
+    <meta name="generator" content="Leprikón {{ request.leprikon_version }}" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <style>
     .bgimg {
-        background-image: url('/static/themes/ddmla/images/background.png');
+        background-image: url('https://ddm-lanskroun.cz/wp-content/themes/ddmla/images/background.png');
         min-height: 100%;
         background-position: center;
         background-size: cover;
@@ -75,15 +163,15 @@ img.emoji {
     </style>
 </head>
 
-<body class="page-template-default page bgimg {{ request.current_page.slug }}" onload="onLoad()">
+<body class="page-template-default page {{ request.current_page.slug }} bgimg" onload="onLoad()">
     {% cms_toolbar %}
     <header class="w3-top">
         <div class="w3-light-grey w3-border w3-padding-large" style="height: 140px">
             <div class="ddm-logo w3-display-container w3-left" style="height: 100%; width: 330px;">
-                <a class="w3-display-left" href="/">
-                    <img id="brand" src="/static/themes/ddmla/images/damian-logo-black.png" alt="DDM Damián Lanškroun" height="100px">
+                <a class="w3-display-left" href="https://ddm-lanskroun.cz/">
+                    <img id="brand" src="https://ddm-lanskroun.cz/wp-content/themes/ddmla/images/damian-logo-black.png" alt="DDM Damián Lanškroun" height="100px">
                 </a>
-                <a class="w3-display-right" href="/">
+                <a class="w3-display-right" href="https://ddm-lanskroun.cz/">
                     <div class="w3-text-black">
                     <b>Dům dětí a mládeže<br/>DAMIÁN, Lanškroun</b>
                     </div>
@@ -118,11 +206,12 @@ img.emoji {
                     </span>
                     <a href="https://ddm-lanskroun.cz/fotogalerie" class="w3-button w3-large w3-hide-small w3-hide-medium">Fotogalerie</a>
                     <a href="https://ddm-lanskroun.cz/projekty" class="w3-button w3-large w3-hide-small w3-hide-medium">Projekty</a>
-                    <a class="w3-button w3-hover-opacity w3-hide-small w3-hide-medium" href="https://www.facebook.com/D%C5%AFm-d%C4%9Bt%C3%AD-a-ml%C3%A1de%C5%BEe-Dami%C3%A1n-Lan%C5%A1kroun-1426845087354892/"><img src="/static/themes/ddmla/images/facebook.png" alt="facebook"></a>
+                    <a class="w3-button w3-hover-opacity w3-hide-small w3-hide-medium" href="https://www.facebook.com/D%C5%AFm-d%C4%9Bt%C3%AD-a-ml%C3%A1de%C5%BEe-Dami%C3%A1n-Lan%C5%A1kroun-1426845087354892/"><img src="https://ddm-lanskroun.cz/wp-content/themes/ddmla/images/facebook.png" alt="facebook"></a>
 
                     <a href="javascript:void(0)" class="w3-button w3-right w3-hide-large" onclick="collapseMenu()">&#9776;</a>
                 </div>
                 <div class="w3-row-padding w3-right w3-hide-small w3-hide-medium w3-margin-right">
+                    <a href="https://ddm-lanskroun.cz/kontakty" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">Kontakty</a>
                     <a href="https://ddm-lanskroun.cz/uredni-deska" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">Úřední deska</a>
                     <a href="https://ddm-lanskroun.cz/o-nas" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">O nás</a>
                     <a href="https://ddm-lanskroun.cz/kariera" class="w3-button w3-large w3-hide-small w3-hide-medium w3-padding">Kariéra</a>
@@ -159,12 +248,13 @@ img.emoji {
             </span>
             <a href="https://ddm-lanskroun.cz/fotogalerie" class="w3-bar-item w3-button">Fotogalerie</a>
             <a href="https://ddm-lanskroun.cz/projekty" class="w3-bar-item w3-button">Projekty</a>
+            <a href="https://ddm-lanskroun.cz/kontakty" class="w3-bar-item w3-button">Kontakty</a>
             <a href="https://ddm-lanskroun.cz/uredni-deska" class="w3-bar-item w3-button">Úřední deska</a>
             <a href="https://ddm-lanskroun.cz/o-nas" class="w3-bar-item w3-button">O nás</a>
             <a href="https://ddm-lanskroun.cz/kariera" class="w3-bar-item w3-button">Kariéra</a>
             <!--a href="https://ddm-lanskroun.cz/evropska-dobrovolna-sluzba" class="w3-bar-item w3-button">Evropská Dobrovolná Služba</a-->
             <a href="https://ddm-lanskroun.cz/damian-online" class="w3-bar-item w3-button">Damián online</a>
-            <a class="w3-hover-opacity w3-padding w3-margin" href="https://www.facebook.com/D%C5%AFm-d%C4%9Bt%C3%AD-a-ml%C3%A1de%C5%BEe-Dami%C3%A1n-Lan%C5%A1kroun-1426845087354892/"><img src="/static/themes/ddmla/images/facebook.png" alt="facebook"></a>
+            <a class="w3-hover-opacity w3-padding w3-margin" href="https://www.facebook.com/D%C5%AFm-d%C4%9Bt%C3%AD-a-ml%C3%A1de%C5%BEe-Dami%C3%A1n-Lan%C5%A1kroun-1426845087354892/"><img src="https://ddm-lanskroun.cz/wp-content/themes/ddmla/images/facebook.png" alt="facebook"></a>
             <a class="w3-button w3-large w3-round-xlarge w3-border-pale-blue w3-border w3-padding w3-margin" href="https://www.facebook.com/OK-klub-148299321922433/?fref=ts">O. K.  klub</a>
             <a href="/muj-ucet/" class="w3-bar-item w3-button">Můj účet</a>
         </div>
@@ -254,8 +344,8 @@ img.emoji {
         }
     </script>
 
-    <script type='text/javascript' src='/static/js/wp-embed.min.js?ver=4.9.12'></script>
-    <script type="text/javascript" src="{% static 'leprikon/lib/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script type='text/javascript' src='https://ddm-lanskroun.cz/wp-includes/js/wp-embed.min.js?ver=4.9.15'></script>
+    <script type="text/javascript" src="https://ddmlanskroun.leprikon.cz/static/leprikon/lib/bootstrap/js/bootstrap.min.js"></script>
     {% render_block "js" %}
     {% livechat %}
 </body>
