@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load cms_tags leprikon_tags menu_tags rocketchat %}
+{% load cms_tags leprikon_tags menu_tags %}
 
 {% block base_content %}
 <div class="w3-content w3-round w3-white w3-padding-large w3-border" style="min-height: 440px; padding-top: 150px">
@@ -14,9 +14,6 @@
                     <div style="display: table-cell">
                         <h3 class="header">Uživatel</h3>
                         {% include 'leprikon/user_dropdown.html' %}
-                    </div>
-                    <div style="display: table-cell; vertical-align: bottom;">
-                        {% chat %}
                     </div>
                     <div style="display: table-cell; text-align: right;">
                         <h3 class="header">Školní rok</h3>

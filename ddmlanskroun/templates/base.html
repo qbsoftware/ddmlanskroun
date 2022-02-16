@@ -1,4 +1,4 @@
-{% load i18n cms_tags menu_tags leprikon_tags rocketchat sekizai_tags staticfiles ganalytics %}
+{% load i18n cms_tags menu_tags leprikon_tags sekizai_tags staticfiles ganalytics %}
 <!DOCTYPE html>
 <html lang="cs-CZ">
 
@@ -17,8 +17,6 @@
 
     <link rel="stylesheet" type="text/css" media="all" href="{% static 'leprikon/lib/bootstrap/css/bootstrap.min.css' %}"/>
     <link rel="stylesheet" type="text/css" media="all" href="{% static 'leprikon/css/layout.css' %}"/>
-    <link rel="stylesheet" type="text/css" media="all" href="{% static 'leprikon/css/chat.css' %}"/>
-    <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/style.css' %}" />
     {% render_block "css" %}
     <link rel='dns-prefetch' href='//ajax.googleapis.com' />
     <link rel='dns-prefetch' href='//www.w3schools.com' />
@@ -349,7 +347,6 @@ img.emoji {
     <script type='text/javascript' src='https://ddm-lanskroun.cz/wp-includes/js/wp-embed.min.js?ver=4.9.15'></script>
     <script type="text/javascript" src="https://ddmlanskroun.leprikon.cz/static/leprikon/lib/bootstrap/js/bootstrap.min.js"></script>
     {% render_block "js" %}
-    {% livechat %}
 </body>
 
 </html>
