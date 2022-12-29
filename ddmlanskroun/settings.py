@@ -16,7 +16,6 @@ INSTALLED_APPS = [
     'cms_articles',
     #'cms_articles.import_wordpress',
     'aldryn_search',
-    'aldryn_bootstrap3',
 ]
 
 CMS_TEMPLATES = [
