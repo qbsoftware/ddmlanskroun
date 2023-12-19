@@ -1,4 +1,4 @@
-Whoosh
 aldryn-search
 django-cms-articles
-leprikon
+leprikon>=3.9.6
+django-bankreader>=1.1
