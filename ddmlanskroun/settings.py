@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-
 """
 Django settings for ddmlanskroun project.
 """
@@ -13,8 +9,9 @@ from leprikon.site.settings import *
 INSTALLED_APPS = [
     'ddmlanskroun',
 ] + INSTALLED_APPS + [
+    'django.contrib.redirects',
     'cms_articles',
-    #'cms_articles.import_wordpress',
+    'cms_articles.import_wordpress',
     'aldryn_search',
 ]
 
