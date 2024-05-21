@@ -2,29 +2,15 @@
 {% load cms_tags leprikon_tags menu_tags %}
 
 {% block base_content %}
-<div class="w3-content w3-round w3-white w3-padding-large w3-border" style="min-height: 440px; padding-top: 150px">
-    <div class="row">
-        <div class="col-sm-9" id="content">
-            {% include 'leprikon/modal_messages.html' %}
-            {% block content %}{% endblock %}
-        </div>
-        <div class="col-sm-3" id="sidebar">
-            <div style="display: table; width: 100%; margin-bottom: 15px;">
-                <div style="display: table-row;">
-                    <div style="display: table-cell">
-                        <h3 class="header">Uživatel</h3>
-                        {% include 'leprikon/user_dropdown.html' %}
-                    </div>
-                    <div style="display: table-cell; text-align: right;">
-                        <h3 class="header">Školní rok</h3>
-                        {% school_year_form %}
-                    </div>
-                </div>
-            </div>
-            <nav class="list-group">
-                {% block menu %}{% show_menu_below_id 'leprikon' 0 100 0 1 'leprikon/menu.html' %}{% endblock %}
-            </nav>
-        </div>
+<div class="row" style="display: flex;">
+    <div class="col-sm-9" id="main">
+        {% include 'leprikon/modal_messages.html' %}
+        {% block content %}{% endblock %}
+    </div>
+    <div class="col-sm-3" id="sidebar">
+        <nav class="list-group">
+            {% block menu %}{% show_menu_below_id 'leprikon' 0 100 0 1 'leprikon/menu.html' %}{% endblock %}
+        </nav>
     </div>
 </div>
 {% endblock %}

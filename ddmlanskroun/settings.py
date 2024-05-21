@@ -13,26 +13,38 @@ INSTALLED_APPS = [
     'cms_articles',
     'cms_articles.import_wordpress',
     'aldryn_search',
+    'cmsplugin_iframe2',
 ]
+
+MIDDLEWARE = [
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
+] + MIDDLEWARE
 
 CMS_TEMPLATES = [
     ('default.html', 'Výchozí'),
+    ('with_submenu.html', 'Se submenu'),
     ('home.html', 'Titulní stránka'),
 ]
 
 # templates used to render plugin article
 CMS_ARTICLES_PLUGIN_ARTICLE_TEMPLATES = [
     ('default', 'Výchozí'),
+    ('home', _('Na titulní stránku')),
 ]
 
 # templates used to render plugin articles
 CMS_ARTICLES_PLUGIN_ARTICLES_TEMPLATES = [
     ('default', 'Výchozí'),
+    ('archive', 'Archiv'),
+    ('home', _('Na titulní stránku')),
 ]
 
 CMS_PLACEHOLDER_CONF = {
     'content': {
         'name': 'Obsah',
+    },
+    'sidebar': {
+        'name': 'Boční panel'
     },
     'footer': {
         'name': 'Patička',
@@ -61,3 +73,8 @@ HAYSTACK_CONNECTIONS = {
         'PATH': os.path.join(BASE_DIR, 'data', 'search'),
     },
 }
+
+DJANGOCMS_FILE_TEMPLATES = [
+    ('gallery', _('Gallery')),
+    ('homepage', _('Homepage'))
+]

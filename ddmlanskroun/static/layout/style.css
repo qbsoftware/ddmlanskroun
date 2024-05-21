@@ -1,0 +1,156 @@
+
+.box, .article_preview {
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    border-radius: 10px;
+    background-color: #eeffbf;
+}
+
+.box-header {
+    clear: both;
+    padding: 3px 10px;
+    font-size: 18px;
+}
+
+.box-header .tag {
+    display: inline-block;
+    border: none;
+    padding: 1px 5px;
+}
+
+.box-header:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.box-header small {
+    margin-left: 15px;
+}
+
+.box-header a.btn {
+    float: right;
+    margin-left: 5px;
+}
+
+.box-content {
+    padding: 10px;
+}
+
+.box-content:after, .article_preview:after, .row {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.box-content label {
+    text-align: right;
+}
+
+.box-content .row {
+    margin-bottom: 5px;
+}
+
+.box-content {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.btn.right {
+    text-align: left;
+    float: right;
+    margin-bottom: 5px;
+}
+
+img.right, .article_preview img {
+    text-align: left;
+    float: right;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.page_title {
+    background-color: #eeffbf;
+}
+
+#container {
+    width: 1060px;
+}
+
+#quickmenu {
+    width: 350px;
+}
+
+#quickmenu .viewport,
+#quickmenu .viewport .overview {
+    width: 350px;
+}
+
+#home-content {
+    width: 745px;
+}
+
+.col_201 {
+    width: 201px;
+    margin: 0px 20px;
+}
+
+#nav-wrapper {
+    bottom: 45px;
+}
+
+#search-form {
+    position: absolute;
+    right: 0;
+    top: 45px;
+    width: 400px;
+}
+
+.search-results ul, .pagenav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.pagenav li {
+    display: inline;
+}
+
+/* #slide-container is broken with bootstrap's box-sizing boder-box */
+#slide-container * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.post_image {
+    float: left;
+    margin: 0 2em 2em 0;
+}
+
+input[type="checkbox"].form-control {
+    width: auto;
+}
+
+a.gallery {
+    display: block;
+    height: 150px;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+}
+
+a.gallery img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}
+
+.survey-bar {
+    border-radius: 3px;
+}
+
+.btn-primary {
+    background-color: #116611;
+    border-color: #116611;
+}
