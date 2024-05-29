@@ -1,16 +1,48 @@
-{% extends "base.html" %}
-{% load cms_tags leprikon_tags menu_tags %}
+{% extends "with_submenu.html" %}
+{% load cms_tags menu_tags %}
 
 {% block base_content %}
-<div class="row" style="display: flex;">
-    <div class="col-sm-9" id="main">
-        {% include 'leprikon/modal_messages.html' %}
-        {% block content %}{% endblock %}
+
+<!--Main begin-->
+<div id="main" class="round_8 clearfix">
+
+    {% if messages %}
+    <div class='messages'>
+        {% for message in messages %}
+            <div class='alert alert-info'>
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                {{ message }}
+            </div>
+        {% endfor %}
     </div>
-    <div class="col-sm-3" id="sidebar">
-        <nav class="list-group">
-            {% block menu %}{% show_menu_below_id 'leprikon' 0 100 0 1 'leprikon/menu.html' %}{% endblock %}
-        </nav>
+    {% endif %}
+
+    <!-- Breadcrumb begin -->
+    <div class="pad-left-10">
+        <div id="pkb-crumbs">
+            {% block breadcrumb %}{% show_breadcrumb %}{% endblock %}
+        </div>
     </div>
+    <!-- Breadcrumb end -->
+
+    <div id="home-content" class=" left">
+        {% block content %}{% placeholder "content" %}{% endblock %}
+    </div>
+    <!--Content end-->
+
+    <!-- Sidebar begin-->
+    <div  id="sidebar" class="left">
+        <div id="sub-menu" class="sidebar-widget widget_archive">
+            <ul>
+                {% show_menu 1 100 0 1 'menu/menu.html' 'CMSMenu,LeprikonMenu' %}
+                {% block submenu %}{% placeholder "submenu" %}{% endblock %}
+            </ul>
+        </div>
+        {% block sidebar %}{% placeholder "sidebar" %}{% endblock %}
+    </div>
+    <!-- Sidebar end-->
+
 </div>
+<!--Main end-->
+
 {% endblock %}
